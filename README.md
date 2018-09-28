@@ -7,9 +7,9 @@ String manipulation and conversion functions including for working with bytes/he
 ## Example usage
 
 ```js
-import stringfu from 'stringfu';
+import { reverseBytes } from 'stringfu';
 
-console.log(stringfu.reverseBytes('0FAB03')); // 03AB0F
+console.log(reverseBytes('0FAB03')); // 03AB0F
 ```
 
 ## API
