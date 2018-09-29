@@ -38,4 +38,40 @@ describe('Tests', () => {
     expect(typeof result).toEqual('string');
     expect(result).toEqual('ddccbbaa04030201');
   });
+  describe('#containsOnly', () => {
+    test('test 1', () => {
+      const result = stringfu.containsOnly('abc', 'abc');
+      expect(result).toEqual(true);
+    });
+    test('test 2', () => {
+      const result = stringfu.containsOnly('ccc', 'abc');
+      expect(result).toEqual(true);
+    });
+    test('test 3', () => {
+      const result = stringfu.containsOnly('abc', 'bc');
+      expect(result).toEqual(false);
+    });
+  });
+  describe('#isInteger', () => {
+    test('"1234567890" === true', () => {
+      const result = stringfu.isInteger('1234567890');
+      expect(result).toEqual(true);
+    });
+    test('"-12" === true', () => {
+      const result = stringfu.isInteger('-12');
+      expect(result).toEqual(true);
+    });
+    test('"12-" === false', () => {
+      const result = stringfu.isInteger('12-');
+      expect(result).toEqual(false);
+    });
+    test('"12.3" === false', () => {
+      const result = stringfu.isInteger('12.3');
+      expect(result).toEqual(false);
+    });
+    test('"12 3" === false', () => {
+      const result = stringfu.isInteger('12 3');
+      expect(result).toEqual(false);
+    });
+  });
 });

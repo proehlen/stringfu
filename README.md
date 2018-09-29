@@ -7,9 +7,9 @@ String manipulation and conversion functions including for working with bytes/he
 ## Example usage
 
 ```js
-import stringfu from 'stringfu';
+import { reverseBytes } from 'stringfu';
 
-console.log(stringfu.reverseBytes('0FAB03')); // 03AB0F
+console.log(reverseBytes('0FAB03')); // 03AB0F
 ```
 
 ## API
@@ -28,6 +28,10 @@ console.log(stringfu.reverseBytes('0FAB03')); // 03AB0F
     -   [Parameters](#parameters-3)
 -   [reverseBytes](#reversebytes)
     -   [Parameters](#parameters-4)
+-   [containsOnly](#containsonly)
+    -   [Parameters](#parameters-5)
+-   [isInteger](#isinteger)
+    -   [Parameters](#parameters-6)
 
 ### leftPad
 
@@ -79,3 +83,24 @@ Takes a string of hexadecimal and returns a string with the bytes reversed
 -   `str` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
 Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
+### containsOnly
+
+Returns true if string only contains nominated chars
+
+#### Parameters
+
+-   `str` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** String to check
+-   `chars` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Chars to test with
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
+
+### isInteger
+
+Returns true if string represents an integer number
+
+#### Parameters
+
+-   `str` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** String to check
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
