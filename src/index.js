@@ -1,5 +1,7 @@
 // @flow
 
+const NUMERIC_DIGITS = '0123456789';
+
 /**
  * Takes a string and makes it length, left-padded with padChar
  * @param {string} str 
@@ -80,4 +82,28 @@ export function reverseBytes(str: string): string {
   }
 
   return result;
+}
+
+/**
+ * Returns true if string only contains nominated chars
+ * @param {string} str    String to check
+ * @param {string} chars  Chars to test with
+ */
+export function containsOnly(str: string, chars: string): boolean {
+  const firstIllegalChar = str
+    .split('')
+    .find(char => chars.indexOf(char) < 0);
+  return (firstIllegalChar === undefined);
+}
+
+/**
+ * Returns true if string represents an integer number
+ * @param {string} str String to check
+ */
+export function isInteger(str: string): boolean {
+  const firstChar = str.substr(0, 1);
+  const remainingChars = str.substr(1);
+
+  return (firstChar === '-' || containsOnly(firstChar, NUMERIC_DIGITS))
+    && containsOnly(remainingChars, NUMERIC_DIGITS);
 }

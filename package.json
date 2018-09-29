@@ -24,7 +24,6 @@
   "scripts": {
     "clean": "rimraf lib",
     "docs": "documentation readme src --section=API",
-    "postdocs": "git add README.md",
     "flow": "flow",
     "pretest": "npm run build",
     "test": "jest",
