@@ -32,6 +32,8 @@ console.log(reverseBytes('0FAB03')); // 03AB0F
     -   [Parameters](#parameters-5)
 -   [isInteger](#isinteger)
     -   [Parameters](#parameters-6)
+-   [splitWidth](#splitwidth)
+    -   [Parameters](#parameters-7)
 
 ### leftPad
 
@@ -104,3 +106,14 @@ Returns true if string represents an integer number
 -   `str` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** String to check
 
 Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
+
+### splitWidth
+
+Return a string as an array split at lineWidth chars
+
+#### Parameters
+
+-   `str` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `lineWidth` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+
+Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** 

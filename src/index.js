@@ -107,3 +107,15 @@ export function isInteger(str: string): boolean {
   return (firstChar === '-' || containsOnly(firstChar, NUMERIC_DIGITS))
     && containsOnly(remainingChars, NUMERIC_DIGITS);
 }
+
+/**
+ * Return a string as an array split at lineWidth chars
+ */
+export function splitWidth(str: string, lineWidth: number): string[] {
+  const result = [];
+  const lineCount = Math.ceil(str.length / lineWidth);
+  for (let x = 0; x < lineCount; x++) {
+    result.push(str.substr(x * lineWidth, lineWidth));
+  }
+  return result;
+}
