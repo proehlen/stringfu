@@ -119,3 +119,19 @@ export function splitWidth(str: string, lineWidth: number): string[] {
   }
   return result;
 }
+
+/**
+ * Abbreviate a string to a target length replacing the excess length from the middle with the
+ * nominated text
+ */
+export function abbreviateMiddle(str: string, toLength: number, replaceWith: string = '...'): string {
+  let result = str;
+  if (str.length > toLength) {
+    const startLen = Math.ceil((toLength - replaceWith.length) / 2);
+    const startChars = str.substr(0, startLen);
+    const endLen = toLength - replaceWith.length - startLen;
+    const endChars = str.substr(str.length - endLen);
+    result = `${startChars}${replaceWith}${endChars}`;
+  }
+  return result;
+}
