@@ -22,18 +22,20 @@ console.log(reverseBytes('0FAB03')); // 03AB0F
     -   [Parameters](#parameters)
 -   [rightPad](#rightpad)
     -   [Parameters](#parameters-1)
--   [toBytes](#tobytes)
-    -   [Parameters](#parameters-2)
 -   [fromBytes](#frombytes)
-    -   [Parameters](#parameters-3)
+    -   [Parameters](#parameters-2)
 -   [reverseBytes](#reversebytes)
-    -   [Parameters](#parameters-4)
+    -   [Parameters](#parameters-3)
 -   [containsOnly](#containsonly)
-    -   [Parameters](#parameters-5)
+    -   [Parameters](#parameters-4)
 -   [isInteger](#isinteger)
-    -   [Parameters](#parameters-6)
+    -   [Parameters](#parameters-5)
 -   [splitWidth](#splitwidth)
+    -   [Parameters](#parameters-6)
+-   [abbreviateMiddle](#abbreviatemiddle)
     -   [Parameters](#parameters-7)
+-   [toBytes](#tobytes)
+    -   [Parameters](#parameters-8)
 
 ### leftPad
 
@@ -55,16 +57,6 @@ Takes a string and makes it length, right-padded with spaces
 -   `length` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
 
 Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
-
-### toBytes
-
-Takes a hex string and returns Uint8Array of bytes
-
-#### Parameters
-
--   `str` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
-
-Returns **[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)** 
 
 ### fromBytes
 
@@ -117,3 +109,26 @@ Return a string as an array split at lineWidth chars
 -   `lineWidth` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
 
 Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** 
+
+### abbreviateMiddle
+
+Abbreviate a string to a target length replacing the excess length from the middle with the
+nominated text
+
+#### Parameters
+
+-   `str` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `toLength` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `replaceWith` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**  (optional, default `'...'`)
+
+Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
+### toBytes
+
+Takes a hex string and returns Uint8Array of bytes
+
+#### Parameters
+
+-   `str` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
+Returns **[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)** 

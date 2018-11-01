@@ -1,6 +1,7 @@
 // @flow
 
 const NUMERIC_DIGITS = '0123456789';
+const HEX_DIGITS = `${NUMERIC_DIGITS}ABCDEFabcdef`;
 
 /**
  * Takes a string and makes it length, left-padded with padChar
@@ -34,23 +35,6 @@ export function rightPad(str: string, length: number): string {
     result = str;
   }
   return result;
-}
-
-/**
- * Takes a hex string and returns Uint8Array of bytes
- * @param {string} str 
- */
-export function toBytes(str: string): Uint8Array {
-  if (str.length % 2) {
-    throw new Error('String to bytes conversion requires even length string');
-  }
-  const bytes = new Uint8Array(str.length / 2);
-  for (let sourcePos = 0, targetIndex = 0; sourcePos < str.length; sourcePos += 2, ++targetIndex) {
-    const byteString = str.substr(sourcePos, 2);
-    const byte = parseInt(byteString, 16);
-    bytes[targetIndex] = byte;
-  }
-  return bytes;
 }
 
 /**
@@ -134,4 +118,25 @@ export function abbreviateMiddle(str: string, toLength: number, replaceWith: str
     result = `${startChars}${replaceWith}${endChars}`;
   }
   return result;
+}
+
+/**
+ * Takes a hex string and returns Uint8Array of bytes
+ * @param {string} str 
+ */
+export function toBytes(str: string): Uint8Array {
+  if (str.length % 2) {
+    throw new Error('String to bytes conversion requires even length string');
+  }
+  const bytes = new Uint8Array(str.length / 2);
+  for (let sourcePos = 0, targetIndex = 0; sourcePos < str.length; sourcePos += 2, ++targetIndex) {
+    const byteString = str.substr(sourcePos, 2);
+    debugger;
+    if (!containsOnly(byteString, HEX_DIGITS)) {
+      throw new Error(`${byteString} is not a valid hexadecimal byte.`);
+    }
+    const byte = parseInt(byteString, 16);
+    bytes[targetIndex] = byte;
+  }
+  return bytes;
 }
