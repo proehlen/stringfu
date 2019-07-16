@@ -1,5 +1,3 @@
-// @flow
-
 const NUMERIC_DIGITS = '0123456789';
 
 /**

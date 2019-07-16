@@ -1,9 +1,3 @@
-// @flow
-
-declare var describe: any;
-declare var test: any;
-declare var expect: any;
-
 const stringfu = require('../lib/index');
 
 // export function stringFixedWidth(str: string, width: number): string
