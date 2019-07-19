@@ -108,6 +108,9 @@ export function isInteger(str: string): boolean {
 
 /**
  * Return a string as an array split at lineWidth chars
+ * @param {string} str - String to check
+ * @param {number} lineWidth - Make lines this width
+ * @returns {string[]} - Array of strings
  */
 export function splitWidth(str: string, lineWidth: number): string[] {
   const result = [];
@@ -117,3 +120,12 @@ export function splitWidth(str: string, lineWidth: number): string[] {
   }
   return result;
 }
+
+/**
+ * Checks if string contains only whitespace characters
+ * @param {string} str - String to check
+ * @returns {boolean} - True/false
+ */
+export function isWhitespace(str: string) {
+  return /^\s*$/.test(str);
+};

@@ -97,4 +97,26 @@ describe('Tests', () => {
       expect(result[2]).toEqual('gh');
     });
   });
+  describe('#isWhitespace', () => {
+    test('" " === true', () => {
+      const result = stringfu.isWhitespace(' ');
+      expect(result).toEqual(true);
+    });
+    test('" a" === false', () => {
+      const result = stringfu.isWhitespace(' a');
+      expect(result).toEqual(false);
+    });
+    test('" \\t " === true', () => {
+      const result = stringfu.isWhitespace(' \t ');
+      expect(result).toEqual(true);
+    });
+    test('" \\t\\n " === true', () => {
+      const result = stringfu.isWhitespace(' \t\n ');
+      expect(result).toEqual(true);
+    });
+    test('" \\t\\na " === false', () => {
+      const result = stringfu.isWhitespace(' \t\na ');
+      expect(result).toEqual(false);
+    });
+  });
 });

@@ -1,6 +1,6 @@
 {
   "name": "stringfu",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "String utils",
   "homepage": "https://github.com/proehlen/stringfu#README.md",
   "author": "Peter Roehlen",
@@ -23,12 +23,12 @@
   ],
   "scripts": {
     "clean": "rimraf lib",
-    "docs": "documentation readme src --section=API",
+    "docs": "npm run build && documentation readme lib --section=API",
     "pretest": "npm run build",
     "test": "jest",
     "prebuild": "npm run clean",
     "build": "tsc",
-    "prepublish": "npm run docs && npm run build"
+    "prepublishOnly": "npm run docs"
   },
   "devDependencies": {
     "documentation": "^8.1.2",
