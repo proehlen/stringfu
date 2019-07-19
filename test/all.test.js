@@ -119,4 +119,30 @@ describe('Tests', () => {
       expect(result).toEqual(false);
     });
   });
+  describe('#isAlphaNumeric', () => {
+    test('"abhdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" === true', () => {
+      const result = stringfu.isAlphaNumeric('abhdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789');
+      expect(result).toEqual(true);
+    });
+    test('"abc_123" === false', () => {
+      const result = stringfu.isAlphaNumeric('abc_123');
+      expect(result).toEqual(false);
+    });
+    test('" abc123" === false', () => {
+      const result = stringfu.isAlphaNumeric(' abc123');
+      expect(result).toEqual(false);
+    });
+    test('"abc123 " === false', () => {
+      const result = stringfu.isAlphaNumeric('abc123 ');
+      expect(result).toEqual(false);
+    });
+    test('"abc#123" === false', () => {
+      const result = stringfu.isAlphaNumeric('abc#123');
+      expect(result).toEqual(false);
+    });
+    test('"abc 123" === false', () => {
+      const result = stringfu.isAlphaNumeric('abc 123');
+      expect(result).toEqual(false);
+    });
+  });
 });

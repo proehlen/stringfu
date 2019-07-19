@@ -129,3 +129,12 @@ export function splitWidth(str: string, lineWidth: number): string[] {
 export function isWhitespace(str: string) {
   return /^\s*$/.test(str);
 };
+
+/**
+ * Checks if string contains only alphanumeric characters
+ * @param {string} str - String to check
+ * @returns {boolean} - True if only alphanumeric
+ */
+export function isAlphaNumeric(str: string) {
+  return /^[a-zA-Z0-9]*$/.test(str);
+};

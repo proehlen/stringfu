@@ -36,6 +36,8 @@ console.log(reverseBytes('0FAB03')); // 03AB0F
     -   [Parameters](#parameters-7)
 -   [isWhitespace](#iswhitespace)
     -   [Parameters](#parameters-8)
+-   [isAlphaNumeric](#isalphanumeric)
+    -   [Parameters](#parameters-9)
 
 ### leftPad
 
@@ -117,3 +119,13 @@ Checks if string contains only whitespace characters
 -   `str` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** String to check
 
 Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** True/false
+
+### isAlphaNumeric
+
+Checks if string contains only alphanumeric characters
+
+#### Parameters
+
+-   `str` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** String to check
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** True if only alphanumeric
